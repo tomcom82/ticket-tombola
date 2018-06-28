@@ -15,7 +15,7 @@ apply plugin: 'eclipse'
 apply plugin: 'org.springframework.boot'
 apply plugin: 'io.spring.dependency-management'
 
-group = 'com.example'
+group = 'com.amkob'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
@@ -26,5 +26,17 @@ repositories {
 
 dependencies {
     compile('org.springframework.boot:spring-boot-starter-web')
+
+    //Javax
+    compile group: 'javax.inject', name: 'javax.inject', version: '1'
+    compile group: 'javax.transaction', name: 'javax.transaction-api', version: '1.3'
+
+    //Database
+    compile group: 'com.zaxxer', name: 'HikariCP', version: '3.2.0'
+    compile group: 'org.hibernate', name: 'hibernate-core', version: '5.3.1.Final'
+    compile group: 'org.hibernate', name: 'hibernate-jcache', version: '5.3.1.Final'
+    compile group: 'com.h2database', name: 'h2', version: '1.4.197'
+
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
 }
