@@ -21,11 +21,13 @@ public class Lobby extends AbstractAggregateRoot {
 
     public void enter(User user) {
         try {
-            if (!isFull()) {
+            if (isFull()) {
                 throw new LobbyIsFullException();
             }
-            if (users.offer(user)) {
+            if (!users.offer(user)) {
                 registerEvent(new UserEnteredLobby());
+            } else {
+
             }
 
         } catch (LobbyIsFullException e) {
